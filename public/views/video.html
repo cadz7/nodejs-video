@@ -1,0 +1,26 @@
+<div class="video-container">
+	<video comments-dir video-current-time="currentTime" id='video' controls width="640" height="352">
+		<source src="assets/steve.mp4" type="video/mp4"/>
+		<!-- fallback -->
+		Your browser does not support the <code>video</code> element.
+	</video>
+	<p class="title">Steve Jobs: Secrets of Life</p>
+	<div class="text-area">
+		<br>
+		<textarea ng-model="commentText" placeholder="Share your comment.."></textarea> <br><br>
+		<button ng-click="postComment()" class="pristine">Post Comment</button>
+		<button ng-click="clearComments()" class="danger">Clear all comments</button>
+		<div id="spinner-container" class="margin-top">
+			<div>
+			</div>
+		</div>
+	</div>
+	<p class="comments-title">Comments</p>
+	<p class="comments-text">Comments get highlighted when video reaches the time they were posted.
+	</p>
+	<div class="list-comments">
+			<p ng-repeat="commentObject in returnedComments" ng-class='{"bold" : videoCurrentTime === commentObject.time }'>
+				<span class="time-posted">{{commentObject.time}}s : </span> {{commentObject.comment}}
+			</p>
+	</div>
+</div>

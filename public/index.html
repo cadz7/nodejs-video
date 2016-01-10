@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+	<base href="/">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Node.js Video App</title>
+	<link rel="icon" type="image/png" href="favicon.png"/>
+	<!-- Stylesheets -->
+	<link href="stylesheets/style.css" rel="stylesheet">
+	<link href="stylesheets/spinner.css" rel="stylesheet" >
+	<link href="stylesheets/custom-bootstrap.css" rel="stylesheet">
+
+</head>
+<body>
+<nav id="nav">
+	<ul class="container">
+		<li><a href="/#/home">Home</a></li>
+		<li><a href="/#/video">Video App</a></li>
+		<li><a href="/#/documentation">Documentation</a></li>
+	</ul>
+</nav>
+<div ui-view class="full-height"></div>
+
+<!-- Vendor Files -->
+<script src="vendor/angular.js"></script>
+<script src="vendor/angular-strap.js"></script>
+<script src="vendor/angular-strap.tpl.js"></script>
+<script src="vendor/angular-messages.js"></script>
+<script src="vendor/angular-resource.js"></script>
+<script src="vendor/angular-cookies.js"></script>
+<script src="vendor/angular-ui-router.min.js"></script>
+<script src="vendor/moment.min.js"></script>
+<script src="vendor/lodash.min.js"></script>
+
+<!-- Angular JS Files -->		
+<script src="app.js"></script>
+<script src="javascripts/video-ctrl.js"></script>
+<script src="javascripts/main-service.js"></script>
+<script src="javascripts/server-service.js"></script>
+<script src="javascripts/comment-dir.js"></script>
+
+</body>
+</html>

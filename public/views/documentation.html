@@ -1,0 +1,33 @@
+<div class="video-container">
+	<div class="doc-container">
+		<h3>App Workflow</h3>
+		<ul>
+			<li class="lead">POSTING</li>
+			<li>Play the video.</li>
+			<li>Post a comment underneath.</li>
+			<li>An AJAX request gets sent to main service.</li>
+			<li>main service creates comment object with its timestamp and sends a POST request to the Node.js server.</li>
+			<li>The server receives a POST request at '/comments' URL. </li> 
+			 <li>The new comment object is stored in MongoDB using a Mongoose Model.</li>
+			 <li>Success/Failure response sent back to main service.</li>
+			 <li>If successful, latest comments are fetched via AJAX and inserted into the DOM.</li>
+		</ul>
+		<ul>
+			<li class="lead">FETCHING</li>
+			<li>On app load, a GET request is sent to the '/comments' URL.</li>
+			<li>All comments are returned to the main service in a JSON object.</li>
+			<li>main service sends the JSON to the Video Controller wrapped in a promise.</li>
+			<li>VideoCtrl resolves the promise and binds the data to the DOM.</li>
+		</ul>
+		<ul>
+			<li class="lead">DELETING</li>
+			<li>On clicking 'clear comments', a DELETE request is sent to the '/comments' URL.</li>
+			<li>Success/Failure response sent to main service.</li>
+		</ul>
+		<ul>
+			<li class="lead">HIGHLIGHTING COMMENTS</li>
+			<li>On playing the video, 'commentDir' directive triggers a '$watch' which which tracks video time.</li>
+			<li>The comments with similar timestamp to the current video time are highlighted via conditional CSS.</li>
+		</ul>
+	</div>
+</div>
