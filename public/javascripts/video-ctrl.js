@@ -8,37 +8,37 @@ angular.module('MyApp')
 
     var newComment = {};
 
-            $scope.fetchComments = function () {
-                main.fetchCommentsFromServer()
-                    .then(function(comments) {
-                         $scope.returnedComments = _.sortBy(comments, "time");
-                    })
-                    .catch(function(err) {
-                        $log.error(err);
-                    });
+    $scope.fetchComments = function() {
+      main.fetchCommentsFromServer()
+        .then(function(comments) {
+          $scope.returnedComments = _.sortBy(comments, "time");
+        })
+        .catch(function(err) {
+          $log.error(err);
+        });
     };
 
     $scope.postComment = function() {
-                newComment.commentText = $scope.commentText;
-                main.postCommentToServer(newComment)
-                    .then(function() {
-                        $scope.fetchComments();
-                    })
-                    .catch(function(err) {
-                        $log.error(err);
-                    });
-            };
+      newComment.commentText = $scope.commentText;
+      main.postCommentToServer(newComment)
+        .then(function() {
+          $scope.fetchComments();
+        })
+        .catch(function(err) {
+          $log.error(err);
+        });
+    };
 
-            $scope.clearComments = function() {
-                main.clearCommentsFromServer()
-                    .then(function() {
-                        $scope.fetchComments();
-                    })
-                    .catch(function(err) {
-                        $log.error(err);
-                    });
-            };
+    $scope.clearComments = function() {
+      main.clearCommentsFromServer()
+        .then(function() {
+          $scope.fetchComments();
+        })
+        .catch(function(err) {
+          $log.error(err);
+        });
+    };
 
     $scope.fetchComments();
 
-}]);
+  }]);

@@ -14,7 +14,7 @@ var commentsSchema = new mongoose.Schema({
 
 var Comments = mongoose.model('Comments', commentsSchema);
 try {
-  mongoose.connect('mongodb://db_user:qwasdf@ds049130.mongolab.com:49130/nodejs-video');
+  mongoose.connect(process.env.DB_URL);
   console.log('Mongoose connection status code:', mongoose.connection.readyState);
 } catch(e) {
   console.log('e.stack')
