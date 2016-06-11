@@ -1,4 +1,4 @@
-##Jumpcut Studios Assignment
+### Simple Node.js app that syncs comments made on the video to server
 
 ### Made with AngularJS + Node.js + MongoDB
 
