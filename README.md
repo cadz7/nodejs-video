@@ -2,9 +2,7 @@
 
 ### Made with AngularJS + Node.js + MongoDB
 
-This is assignment is made by Rakshit Shukla in regards for the Jumpcut Studios summer internship application.
-
-The assignment contains an embedded video to which a user can post comments.  
+This app contains an embedded video to which a user can post comments.  
 Posted comments are stored in a database and are displayed to the user.  
 When the video is playing, all comments with a similar timestamp as the video get highlighted.
 
